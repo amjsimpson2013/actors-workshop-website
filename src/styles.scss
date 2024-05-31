@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+
+@use '@angular/material' as mat;
+@use 'app/app.component.scss' as app-component;
+
+@import './assets/themes/default-theme';
+
+@include mat.core();
+
+$default-theme-typography: mat.define-typography-config(
+    $font-family: "Roboto, 'Helvetica Neue', sans-serif",
+    $body-1:
+        mat.define-typography-level(
+            $font-weight: 400,
+            $font-size: 14px,
+            $line-height: 15.75px,
+            $letter-spacing: normal,
+        ),
+    $body-2:
+        mat.define-typography-level(
+            $font-weight: 400,
+            $font-size: 14px,
+            $line-height: 15px,
+            $letter-spacing: normal,
+        ),
+    $button:
+        mat.define-typography-level(
+            $font-weight: 500,
+            $font-size: 14px,
+            $letter-spacing: normal,
+        ),
+);
+
+@include mat.all-component-typographies($default-theme-typography);
+
+//default theme:
+html {
+    @include mat.all-component-themes($default-theme);
+}
