@@ -1,0 +1,48 @@
+@use '@angular/material' as mat;
+
+$default-primary-palette: (
+    100: #C0B283,
+    500: #C0B283,
+    700: #C0B283,
+    contrast: (
+        100: #C0B283,
+        500: #C0B283,
+        700: #C0B283, 
+    )
+);
+
+$default-accent-palette: (
+    100: #DCD0C0,
+    500: #DCD0C0,
+    700: #DCD0C0,
+    contrast: (
+        100: #DCD0C0,
+        500: #DCD0C0,
+        700: #DCD0C0,
+    )
+);
+
+$default-warn-palette: (
+    100: #373737,
+    500: #373737,
+    700: #373737,
+    contrast: (
+        100: #373737,
+        500: #373737,
+        700: #373737,
+    )
+);
+
+$default-primary: mat.define-palette($default-primary-palette);
+$default-accent: mat.define-palette($default-accent-palette);
+$default-warn: mat.define-palette($default-warn-palette);
+
+$default-theme: mat.define-light-theme(
+    (
+        color: (
+            primary: $default-primary,
+            accent: $default-accent,
+            warn: $default-warn
+        ),
+    )
+);
