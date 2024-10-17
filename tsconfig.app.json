@@ -6,8 +6,7 @@
     "types": ["facebook-js-sdk"]
   },
   "files": [
-    "src/main.ts",
-
+    "src/main.ts"
   ],
   "include": [
     "src/**/*.d.ts"

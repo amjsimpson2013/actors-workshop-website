@@ -6,8 +6,10 @@ import { MatToolbarModule } from '@angular/material/toolbar'
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
  bannerRoute: string = '/assets/images/Hero-Banner-Placeholder-Dark-1024x480-1.png';
+
+ constructor() {}
 }

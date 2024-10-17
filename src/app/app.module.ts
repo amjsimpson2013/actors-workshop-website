@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { APP_INITIALIZER, NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { MatIconModule } from "@angular/material/icon";
@@ -9,13 +9,13 @@ import { AppRoutingModule } from "./app-routing.module";
 import { BrowserModule } from "@angular/platform-browser";
 import { MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose } from '@angular/material/dialog';
 import { ReactiveFormsModule } from "@angular/forms";
-import { EmailPopUpComponent } from "./email-pop-up/email-pop-up.component";
-import MailerLite from "@mailerlite/mailerlite-nodejs";
 import { LandingPageComponent } from "./landing-page/landing-page/landing-page.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { appInitializer } from "./helpers/appinitializer";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
-    declarations: [AppComponent, HomeComponent, EmailPopUpComponent, LandingPageComponent],
+    declarations: [AppComponent, HomeComponent, LandingPageComponent],
     imports: [
         AppRoutingModule,
         BrowserModule,
@@ -28,7 +28,11 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
         MatDialogActions, 
         MatDialogClose,
         MatInputModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule,
+    ],
+    providers: [
+        { provide: APP_INITIALIZER, useFactory: appInitializer, multi: true },
     ],
     bootstrap: [AppComponent]
 })
